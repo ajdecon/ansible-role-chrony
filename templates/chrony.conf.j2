@@ -2,7 +2,11 @@
 
 # List of NTP servers to use.
 {% for server in chrony_config_server %}
+{% if server in chrony_server_preferred %}
+server {{ server }} iburst prefer 
+{% else %}
 server {{ server }} iburst
+{% endif %}
 {% endfor %}
 
 # Ignore stratum in source selection.

@@ -9,3 +9,9 @@ chrony_config_server:
   - 3.pool.ntp.org
 chrony_config_logdir: /var/log/chrony
 chrony_timezone: Etc/UTC
+
+# Add servers to chrony_config_preferred if you want the servers to have the
+# "prefer" directive appended in config. They must also appear in
+# chrony_config_server.
+#chrony_config_preferred:
+# - 0.pool.ntp.org
